@@ -1,0 +1,39 @@
+{
+    "cards": [
+        {   
+            "title": "Viaje de placer", 
+            "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet porttitor tellus, malesuada dignissim odio gravida ut. Duis scelerisque risus at urna pretium sodales. Phasellus aliquam, magna vel blandit laoreet, felis nisi elementum purus, vitae semper nisl mauris a diam.", 
+            "image": "./img/people_1.jpg", 
+            "url": "https://google.com"
+        },
+        {   
+            "title": "Reunion de trabajo", 
+            "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet porttitor tellus, malesuada dignissim odio gravida ut. Duis scelerisque risus at urna pretium sodales. Phasellus aliquam, magna vel blandit laoreet, felis nisi elementum purus, vitae semper nisl mauris a diam.", 
+            "image": "./img/meeting_1.jpg",
+            "url": "https://github.com" 
+        },
+        {   
+            "title": "Bella Dama", 
+            "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet porttitor tellus, malesuada dignissim odio gravida ut. Duis scelerisque risus at urna pretium sodales. Phasellus aliquam, magna vel blandit laoreet, felis nisi elementum purus, vitae semper nisl mauris a diam.", 
+            "image": "./img/woman_1.jpg",
+            "url": "https://youtube.com" 
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "title": "Clases de cocina",
+            "link": "#"
+        },
+        {
+            "id": 2,
+            "title": "Electonica para la vida",
+            "link": "#"
+        },
+        {
+            "id": 3,
+            "title": "Musica en todos los sentidos",
+            "link": "#"
+        }
+    ]
+}

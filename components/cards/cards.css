@@ -1,0 +1,45 @@
+/* cards component */
+.card {
+    background: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card .card-header img {
+    width: 100%;
+    height: auto;
+}
+
+.card .card-content {
+    padding: 20px;
+}
+
+.card .card-content h3 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.card .card-content p {
+    text-align: justify;
+    line-height: 24px;
+    font-weight: lighter;
+}
+
+.button {
+    text-decoration: none;
+    color: #fff;
+    background: #1770f9;
+    padding: 15px 30px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1255be;
+}
+
+.card .card-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de componentes web</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
+    <script src="./components/hero/hero.js"></script>
+    <script src="./components/navbar/navbar.js"></script>
+    <script src="./components/footer/footer.js"></script>
+</head>
+<body>
+    <navbar-component></navbar-component>
+    <hero-component 
+        title="Atomic Design"
+        message="El desarrollo en pequenos bloques de codigo reutilizables"
+        image="./img/image_1.jpg"
+    ></hero-component>
+    <h2 class="text-center">Navbar Block</h2>
+    <p class="text-center">
+        Se utiliza para la navegacion de las paginas debe estar presente
+        para que se ejecute
+    </p>
+    <navbar-component></navbar-component>
+    <h2 class="text-center">Pagination block</h2>
+    <p class="text-center">Se utiliza para los controles de paginacion de tablas</p>
+    <div class="content">
+        <table style="width: 100%;">
+            <tbody>
+                <tr>
+                    <td>my test</td>
+                    <td>other</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer-component></footer-component>
+</body>
+</html>
