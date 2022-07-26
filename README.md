@@ -1,4 +1,4 @@
-# atomic-dysign
+# atomic-design
 
 this repository is un recordatory of not need a framework or library to 
 create a dynamic component, just need the fundamentals.
