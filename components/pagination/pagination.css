@@ -1,0 +1,27 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+ul.paginator {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+ul.paginator li {
+    padding: 10px 15px;
+    color: #fff;
+    background: #1770f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+ul.paginator li:hover {
+    background-color: #1255be;
+}
+
+ul.paginator li:last-child {
+    margin-left: 15px;
+}

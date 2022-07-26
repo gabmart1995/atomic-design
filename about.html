@@ -10,6 +10,7 @@
     <script src="./components/hero/hero.js"></script>
     <script src="./components/navbar/navbar.js"></script>
     <script src="./components/footer/footer.js"></script>
+    <script src="./components/pagination/pagination.js"></script>
 </head>
 <body>
     <navbar-component></navbar-component>
@@ -27,15 +28,19 @@
     <h2 class="text-center">Pagination block</h2>
     <p class="text-center">Se utiliza para los controles de paginacion de tablas</p>
     <div class="content">
-        <table style="width: 100%;">
-            <tbody>
+        <table>
+            <thead>
                 <tr>
-                    <td>my test</td>
-                    <td>other</td>
+                    <th>Id:</th>
+                    <th>Title:</th>
                 </tr>
+            </thead>
+            <tbody>
             </tbody>
         </table>
+        <pagination-component pagination="10"></pagination-component>
     </div>
     <footer-component></footer-component>
+    <script src="./about.js"></script>
 </body>
 </html>

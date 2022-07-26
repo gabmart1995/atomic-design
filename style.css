@@ -31,3 +31,33 @@ body {
 .content {
     padding: 20px 100px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* reset all borders */
+}
+
+/* tablas celdas pares */
+table tbody tr:nth-child(odd) {
+    background: #e0e0e0;
+    color: black;
+}
+
+/* tablas celdas impares */
+table tbody tr:nth-child(even) {
+    background: white;
+    color: black;
+}
+
+table thead tr {
+    background: white;
+}
+
+table tr th {
+    text-align: left;
+}
+
+table tr td,
+table tr th {
+    padding: 10px;
+}
