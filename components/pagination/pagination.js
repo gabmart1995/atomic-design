@@ -29,6 +29,7 @@ class Pagination extends HTMLElement {
     }
 
     connectedCallback() {
+        
         fetch('./components/pagination/pagination.html')
             .then( response => response.text() )
             .then( text =>  {
@@ -57,7 +58,7 @@ class Pagination extends HTMLElement {
         return Math.ceil( this._total / this._pagination );
     }
     
-    handleNext( $event ) {
+    handleNext() {
         
         if ( this.page >= this.limit ) {
             return;
@@ -65,31 +66,24 @@ class Pagination extends HTMLElement {
         
         this.page = ++this.page;
 
-        let start = this.page === 1 ? 0 : ( ( this.page * this._pagination ) - ( this.pagination - 1 )  );
-        let end = this.page === 1 ? start + 10 : start + 9; 
-
-        const changeEvent = new CustomEvent('change', {
-            detail: {
-                start,
-                end
-            },
-        });
-        
-        this.dispatchEvent( changeEvent );
-        
-        // console.log( this.page );
+        this.dispatchPagination();
     }
 
-    handlePrevious( $event ) {
+    handlePrevious() {
         
         if ( this.page <= 1 ) {
             return;
         }
 
         this.page = --this.page;
-        
-        let start = this.page === 1 ? 0 : ( ( this.page * this._pagination ) - ( this.pagination - 1 )  );
-        let end = this.page === 1 ? start + 10 : start + 9; 
+
+        this.dispatchPagination();
+    }
+
+    dispatchPagination() {
+
+        let start = this.page === 1 ? 0 : ( ( this.page * this._pagination ) - this.pagination  );
+        let end = start + 10; 
 
         const changeEvent = new CustomEvent('change', {
             detail: {
@@ -101,17 +95,40 @@ class Pagination extends HTMLElement {
         this.dispatchEvent( changeEvent );
         
         // console.log( this.page );
+
+        this.renderNumberPage();
     }
 
     render() {
         
         this.limit = this.calculateLimits();
         
+        const pagination = this.shadowDom.querySelector('.pagination');
+        pagination.innerHTML = (`
+            <div>
+                <b>Pagina:</b> <span id="start"></span> 
+                <b>de</b> <span id="end"></span>
+            </div>
+            <div>
+                <b>Total de registros: </b> <span id="count"></span>
+            </div>
+        `);
+
+        const ulControls = this.shadowDom.querySelector('.paginator');
+        ulControls.innerHTML = (`
+            <li>
+                <button class="prev" role="button">Anterior</button>
+            </li>
+            <li>
+                <button class="next" role="button">Siguiente</button>
+            </li>
+        `); 
+
+        // render total span
         const totalSpan = this.shadowDom.querySelector('span#count');
         totalSpan.innerText = this._total;
 
-        const spanStart = this.shadowDom.querySelector('span#start');
-        spanStart.innerText = this.page;
+        this.renderNumberPage();
 
         const spanEnd = this.shadowDom.querySelector('span#end');
         spanEnd.innerText = this.limit;
@@ -119,8 +136,15 @@ class Pagination extends HTMLElement {
         const prevButton = this.shadowDom.querySelector('.prev');
         const nextButton = this.shadowDom.querySelector('.next');
 
+
+        // assign events to controls
         prevButton.addEventListener('click', this.handlePrevious.bind( this ) );
         nextButton.addEventListener('click', this.handleNext.bind( this ));
+    }
+
+    renderNumberPage() {
+        const spanStart = this.shadowDom.querySelector('span#start');
+        spanStart.innerText = this.page;
     }
 }
 

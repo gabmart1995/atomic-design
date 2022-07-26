@@ -1,0 +1,74 @@
+.modal-container {
+    display: none; /* hidden modal */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#modal-content {
+    width: 70%;
+    height: auto;
+}
+
+#modal-content .modal-header,
+#modal-content .modal-content,
+#modal-content .modal-footer {
+    background: #fff;
+    color: black;
+    padding: 20px 30px;
+    border: 1px solid #e0e0e0;
+}
+
+#modal-content .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* animations fade in modals
+    recomend set timeout in animation out for observed the efects
+*/
+.fade-animation-in {
+    animation: fading 0.2s
+}
+
+@keyframes fading {
+    0% {
+        opacity: 0
+    }
+    
+    50% {
+        opacity: 0.5
+    
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.fade-animation-out {
+    animation: fading-out 0.2s
+}
+
+@keyframes fading-out {
+    0% {
+        opacity: 1
+    }
+    
+    50% {
+        opacity: 0.5
+    
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+

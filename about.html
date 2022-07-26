@@ -7,10 +7,11 @@
     <title>Acerca de componentes web</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
-    <script src="./components/hero/hero.js"></script>
     <script src="./components/navbar/navbar.js"></script>
-    <script src="./components/footer/footer.js"></script>
+    <script src="./components/hero/hero.js"></script>
     <script src="./components/pagination/pagination.js"></script>
+    <script src="./components/modals/modal.js"></script>
+    <script src="./components/footer/footer.js"></script>
 </head>
 <body>
     <navbar-component></navbar-component>
@@ -19,12 +20,14 @@
         message="El desarrollo en pequenos bloques de codigo reutilizables"
         image="./img/image_1.jpg"
     ></hero-component>
+    
     <h2 class="text-center">Navbar Block</h2>
     <p class="text-center">
         Se utiliza para la navegacion de las paginas debe estar presente
         para que se ejecute
     </p>
     <navbar-component></navbar-component>
+    
     <h2 class="text-center">Pagination block</h2>
     <p class="text-center">Se utiliza para los controles de paginacion de tablas</p>
     <div class="content">
@@ -36,10 +39,35 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td colspan="2" class="text-center text-danger">No se encontraron registros</td>
+                </tr>
             </tbody>
         </table>
         <pagination-component pagination="10"></pagination-component>
     </div>
+    
+    <div class="text-center" style="margin-bottom: 20px;">
+        <h2>Modal block (Componente con Slots)</h2>
+        <p>Este componente se utiliza para mostrar ventanas emergentes dentro de modales </p>
+        
+        <!-- disparador del modal -->
+        <button id="open-modal" class="modal-button">Open Modal</button>
+    </div>
+
+    <!-- se asignan los slots dentro de los componentes -->
+    <modal-component>
+        <h3 class="modal-title" slot="modal-title">Tu primer modal</h3>
+        <div slot="modal-content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus placeat, repellendus ab adipisci, unde nostrum accusantium cum impedit dolorem ea excepturi, iste facere eaque molestiae animi tenetur voluptatum assumenda voluptates!
+            </p>
+        </div>
+        <div slot="modal-footer">
+            <button id="close-modal" class="modal-button">Cerrar modal</button>
+        </div>
+    </modal-component>
+
     <footer-component></footer-component>
     <script src="./about.js"></script>
 </body>

@@ -10,15 +10,17 @@ ul.paginator {
     list-style: none;
 }
 
-ul.paginator li {
+ul.paginator li button {
     padding: 10px 15px;
     color: #fff;
     background: #1770f9;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
+    font-size: 16px;
 }
 
-ul.paginator li:hover {
+ul.paginator li:hover button {
     background-color: #1255be;
 }
 

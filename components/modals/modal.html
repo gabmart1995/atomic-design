@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="./components/modals/modal.css">
+<!-- modal-content with templates -->
+<template id="modal">
+    <div class="modal-container" id="modal-container">
+        <div class="modal" id="modal-content">
+            <div class="modal-header">
+                <slot name="modal-title">modal title</slot>
+            </div>
+            <div class="modal-content">
+                <slot name="modal-content">modal content</slot>
+            </div>
+            <div class="modal-footer">
+                <slot name="modal-footer">modal footer</slot>
+            </div>
+        </div>
+    </div>
+</template>
