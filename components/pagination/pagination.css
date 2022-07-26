@@ -10,6 +10,12 @@ ul.paginator {
     list-style: none;
 }
 
+@media screen and ( max-width: 768px ) {
+    ul.paginator {
+        padding: 0;
+    }
+}
+
 ul.paginator li button {
     padding: 10px 15px;
     color: #fff;

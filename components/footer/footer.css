@@ -10,6 +10,14 @@ footer .grid-footer {
     margin: 0 100px;
 }
 
+@media screen and (max-width: 768px) {
+    footer .grid-footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        margin: 0 10px;
+    }
+}
+
 footer .grid-footer div {
     padding: 20px;
 }

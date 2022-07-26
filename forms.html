@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes web - forms</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
+    <script src="./components/navbar/navbar.js"></script>
+    <script src="./components/hero/hero.js"></script>
+    <script src="./components/footer/footer.js"></script>
+</head>
+<body>
+    <navbar-component></navbar-component>
+    <hero-component 
+        title="Atomic Design"
+        message="El desarrollo en pequenos bloques de codigo reutilizables"
+        image="./img/image_2.jpg"
+    ></hero-component>
+    <h1 class="text-center">Form block</h1>
+    <p class="text-center">Bloques de formularios para el usuario</p>
+    <div class="flex-center">
+        <form action="" method="" class="form">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name" />
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" />
+            </div>
+            <div>
+                <label for="message">Mensaje:</label>
+                <textarea name="message" id="message"></textarea>
+            </div>
+            <button class="modal-button" type="submit">Enviar datos</button>
+        </form>
+    </div>
+    <footer-component></footer-component>
+    <script src="./forms.js"></script>
+</body>
+</html>

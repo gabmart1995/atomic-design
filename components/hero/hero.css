@@ -4,10 +4,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
     min-height:  150px;
     height: 350px;
 }
+
 
 .layer {
     background-color: rgba(0, 0, 0, 0.4);
@@ -15,6 +15,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     color: #fff;
+}
+
+@media screen and ( max-width: 768px ) {
+    .layer {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
 }
 
 .layer h2 {
@@ -25,10 +32,26 @@
     flex-direction: column;
 }
 
+@media screen and ( max-width: 768px ) {
+    .layer h2 {
+        grid-row: 1 / 2;
+        grid-column:  1 / 2;
+    }
+}
+
+
 .layer p {
     grid-column: 2 / 3;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+@media screen and ( max-width: 768px ) {
+    .layer p {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
 }
