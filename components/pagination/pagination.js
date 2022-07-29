@@ -48,7 +48,7 @@ class Pagination extends HTMLElement {
         
         this[name] = newValue;
 
-        if ( this.total && this.pagination ) {
+        if ( this.hasAttribute('total') && this.hasAttributes('pagiantion') ) {
             this.render();
         }
 
