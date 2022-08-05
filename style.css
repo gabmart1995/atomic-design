@@ -18,6 +18,14 @@ body {
     margin: 20px 20px;
 }
 
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
 @media screen and ( max-width: 768px ) {
     .grid-cards {
         grid-template-columns: 1fr;
@@ -116,7 +124,7 @@ h3.modal-title {
     }
 }
 
-.flex-center form div {
+.flex-center form div.form-row {
     display: grid;
     grid-template-columns: 30% calc(100% - 30%);
     padding: 15px 0;
@@ -130,9 +138,15 @@ form label {
 .flex-center form textarea {
     padding: 10px;
     font-size: 16px;
+    width: 100%;
 }
 
 .flex-center form textarea {
     height: 250px;
+}
+
+.flex-center form small {
+    padding: 5px;
+    font-weight: lighter;
 }
  

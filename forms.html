@@ -27,17 +27,26 @@
             <!-- componente de alerta del formulario -->
             <alert-component show="false"></alert-component>
             <form action="" method="" class="form">
-                <div>
+                <div class="form-row">
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" />
+                    <div>
+                        <input type="text" name="name" id="name" />
+                        <small id="errors-name" class="text-danger d-none"></small>
+                    </div>
                 </div>
-                <div>
+                <div class="form-row">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" />
+                    <div>
+                        <input type="email" name="email" id="email" />
+                        <small id="errors-email" class="text-danger d-none"></small>
+                    </div>
                 </div>
-                <div>
+                <div class="form-row">
                     <label for="message">Mensaje:</label>
-                    <textarea name="message" id="message"></textarea>
+                    <div>
+                        <textarea name="message" id="message"></textarea>
+                        <small id="errors-message" class="text-danger d-none"></small>
+                    </div>
                 </div>
                 <button class="modal-button" type="submit">Enviar datos</button>
             </form>
