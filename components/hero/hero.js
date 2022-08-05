@@ -26,7 +26,6 @@ class Hero extends HTMLElement {
                 this.render();
             })
             .catch( error => console.log( error ) );
-
     }
         
     attributeChangedCallback( name, oldValue, newValue ) {
@@ -38,6 +37,8 @@ class Hero extends HTMLElement {
         }
         
         this[name] = newValue;
+
+        // this.render();
     }
         
     render() {   

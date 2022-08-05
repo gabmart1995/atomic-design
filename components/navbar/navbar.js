@@ -20,23 +20,16 @@ class Navbar extends HTMLElement {
 
         const element = this.shadowDom.querySelector('ul');
 
-        console.log( element.classList.contains('open-menu') );
+        // console.log( element.classList.contains('open-menu') );
 
         if ( element.classList.contains('open-menu') ) {
-            
-            // element.style.display = 'block';
             element.classList.replace('open-menu', 'close-menu');
 
             return;
         }
         
         if ( element.classList.contains('close-menu') ) {
-            
             element.classList.replace('close-menu', 'open-menu');
-            
-            /*setTimeout(() => {
-                element.style.display = 'none';
-            }, 150 );*/
         }
     }
 

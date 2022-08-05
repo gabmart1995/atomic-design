@@ -12,6 +12,7 @@
     <script src="./components/navbar/navbar.js" defer></script>
     <script src="./components/hero/hero.js" defer></script>
     <script src="./components/footer/footer.js" defer></script>
+    <script src="./components//alert/alert.js" defer></script>
     
     <navbar-component></navbar-component>
     <hero-component 
@@ -19,25 +20,30 @@
         message="El desarrollo en pequenos bloques de codigo reutilizables"
         image="./img/image_2.jpg"
     ></hero-component>
-    <h1 class="text-center">Form block</h1>
-    <p class="text-center">Bloques de formularios para el usuario</p>
-    <div class="flex-center">
-        <form action="" method="" class="form">
-            <div>
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" />
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" />
-            </div>
-            <div>
-                <label for="message">Mensaje:</label>
-                <textarea name="message" id="message"></textarea>
-            </div>
-            <button class="modal-button" type="submit">Enviar datos</button>
-        </form>
+    <h1 class="text-center">Form block & Alert block</h1>
+    <p class="text-center">Bloques de formularios para el usuario con una alerta de notificación</p>
+    <div class="form-container">
+        <div class="flex-center">
+            <!-- componente de alerta del formulario -->
+            <alert-component show="false"></alert-component>
+            <form action="" method="" class="form">
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" />
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" />
+                </div>
+                <div>
+                    <label for="message">Mensaje:</label>
+                    <textarea name="message" id="message"></textarea>
+                </div>
+                <button class="modal-button" type="submit">Enviar datos</button>
+            </form>
+        </div>
     </div>
+
     <footer-component></footer-component>
     <script src="./forms.js"></script>
 </body>

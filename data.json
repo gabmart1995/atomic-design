@@ -4,19 +4,19 @@
             "title": "Viaje de placer", 
             "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet porttitor tellus, malesuada dignissim odio gravida ut. Duis scelerisque risus at urna pretium sodales. Phasellus aliquam, magna vel blandit laoreet, felis nisi elementum purus, vitae semper nisl mauris a diam.", 
             "image": "./img/people_1.jpg", 
-            "url": "https://google.com"
+            "url": "#"
         },
         {   
             "title": "Reunion de trabajo", 
             "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet porttitor tellus, malesuada dignissim odio gravida ut. Duis scelerisque risus at urna pretium sodales. Phasellus aliquam, magna vel blandit laoreet, felis nisi elementum purus, vitae semper nisl mauris a diam.", 
             "image": "./img/meeting_1.jpg",
-            "url": "https://github.com" 
+            "url": "./components.html" 
         },
         {   
             "title": "Bella Dama", 
             "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet porttitor tellus, malesuada dignissim odio gravida ut. Duis scelerisque risus at urna pretium sodales. Phasellus aliquam, magna vel blandit laoreet, felis nisi elementum purus, vitae semper nisl mauris a diam.", 
             "image": "./img/woman_1.jpg",
-            "url": "https://youtube.com" 
+            "url": "./forms.html" 
         }
     ],
     "posts": [
