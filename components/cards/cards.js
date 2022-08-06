@@ -16,7 +16,7 @@ class Card extends HTMLElement {
 
     connectedCallback() {
 
-        fetch('./components/cards/cards.html')
+        fetch('/components/cards/cards.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text; 

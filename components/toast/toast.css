@@ -1,0 +1,53 @@
+#toast {
+    visibility: hidden;  /* Hidden by default. Visible on click */
+    background-color: #333; /* Black background color */;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    border-radius: 2px;
+    min-width: 250px;
+    position: fixed;
+    z-index: 1;
+    left: 40%;
+    bottom: 30px;
+}
+
+@media (max-width: 360px) {
+    #toast {
+        left: 14%;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 768px) {
+    #toast {
+        left: 35%;
+    }
+}
+
+#toast.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the toast.
+    However, delay the fade out process for 2.5 seconds */
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }

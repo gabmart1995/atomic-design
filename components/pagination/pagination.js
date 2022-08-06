@@ -30,7 +30,7 @@ class Pagination extends HTMLElement {
 
     connectedCallback() {
         
-        fetch('./components/pagination/pagination.html')
+        fetch('/components/pagination/pagination.html')
             .then( response => response.text() )
             .then( text =>  {
                 this.shadowDom.innerHTML = text;
@@ -90,6 +90,9 @@ class Pagination extends HTMLElement {
                 start,
                 end
             },
+            bubbles: true,
+            cancelable: true,
+            composed: true
         });
 
         this.dispatchEvent( changeEvent );
