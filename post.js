@@ -4,18 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const toast = document.querySelector('toast-component');
     
     const animateBar = () => {
+        
         let value = 0;
-    
+        progressAnimated._value = value;
+
         const interval = setInterval(() => {
     
-            progressAnimated._value = value;
             value += 1;
+            progressAnimated._value = value;
             
-            if ( value > 100 ) {
+            if ( value >= 100 ) {
                 clearInterval( interval );
             }
-    
-        }, 15);
+
+        }, 25 );
     };
 
     buttonToast.addEventListener('click', () => {

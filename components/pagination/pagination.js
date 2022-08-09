@@ -64,7 +64,7 @@ class Pagination extends HTMLElement {
             return;
         }
         
-        this.page = ++this.page;
+        ++this.page;
 
         this.dispatchPagination();
     }
@@ -75,7 +75,7 @@ class Pagination extends HTMLElement {
             return;
         }
 
-        this.page = --this.page;
+        --this.page;
 
         this.dispatchPagination();
     }

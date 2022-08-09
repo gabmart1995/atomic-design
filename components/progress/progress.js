@@ -1,5 +1,6 @@
 class Progress extends HTMLElement {
     
+    // component ready
     isReady = false;
 
     static get observedAttributes() {
@@ -30,7 +31,7 @@ class Progress extends HTMLElement {
 
     attributeChangedCallback( name, oldValue, newValue ) {
         
-        // console.log({ name, oldValue, newValue });
+        console.log({ name, oldValue, newValue });
         
         if ( oldValue === newValue ) {
             return;
@@ -64,7 +65,7 @@ class Progress extends HTMLElement {
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text;
-                this.is_ready = true;
+                this.isReady = true;
                 this.render();
             })
             .catch( error => console.error( error ) );
@@ -73,9 +74,9 @@ class Progress extends HTMLElement {
     render() {
 
         const progressBar = this.shadowDom.querySelector('.progress-bar');
-        progressBar.style.width = ( this.value + '%' );
-
-        if ( this.color ) {
+        progressBar.style.width = ( this._value + '%' );
+        
+        if ( this._color ) {
             progressBar.style.backgroundColor = this._color;
         }
     }
