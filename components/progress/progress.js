@@ -31,7 +31,7 @@ class Progress extends HTMLElement {
 
     attributeChangedCallback( name, oldValue, newValue ) {
         
-        console.log({ name, oldValue, newValue });
+        // console.log({ name, oldValue, newValue });
         
         if ( oldValue === newValue ) {
             return;
@@ -76,7 +76,7 @@ class Progress extends HTMLElement {
         const progressBar = this.shadowDom.querySelector('.progress-bar');
         progressBar.style.width = ( this._value + '%' );
         
-        if ( this._color ) {
+        if ( this.hasAttribute('color') ) {
             progressBar.style.backgroundColor = this._color;
         }
     }

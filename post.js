@@ -20,9 +20,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 25 );
     };
 
+    const renderSwitch = () => {
+        
+        const switchElement = document.querySelector('#switch');
+        
+        const foods = [
+            'Pizza', 
+            'Pasta', 
+            'Helado', 
+            'Galletas', 
+            'Ensaladas', 
+            'Jugos', 
+            'Tequeños', 
+            'Quesos', 
+            'Tortas'
+        ];
+
+        switchElement.innerHTML = foods.map( food => {
+            return (`
+                <div class="column">
+                    <switch-component></switch-component>
+                    <label class="text-left">${food}</label>
+                </div>
+            `);
+        }).join('');
+    };
+
     buttonToast.addEventListener('click', () => {
         toast._open = 'true';
     });
 
     animateBar();
+    renderSwitch();
 });

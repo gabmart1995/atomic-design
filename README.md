@@ -21,6 +21,8 @@ working with frameworks and libraries:
 - navbar
 - cards
 - hero
+- progress bar
+- toast
 
 ### show in page
 deploy in any web server ( apache, nginx, express ... ) in public folder and ready in local browser

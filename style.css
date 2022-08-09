@@ -43,6 +43,10 @@ body {
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
+
 .text-danger {
     color: rgb(196, 22, 22);
 }
@@ -150,5 +154,32 @@ form label {
     font-weight: lighter;
 }
 
+
+.container {
+    margin: 20px 100px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+}
+
+/* switch */
+.grid-switch {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 0;
+}
+
+.grid-switch .column {
+    display: grid;
+    grid-template-columns: 30% calc(100% - 30%);
+}
+
+.column label {
+    display: flex;
+    align-items: center;
+}
 
  
