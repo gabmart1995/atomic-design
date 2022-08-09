@@ -32,12 +32,13 @@ class Toast extends HTMLElement {
             .then( text => {
                 this.shadowDom.innerHTML = text;
                 this._open = 'false';
-            });
+            })
+            .catch( error => console.error( error ));
     }
 
     attributeChangedCallback( name, oldValue, newValue ) {
         
-        console.log({ name, oldValue, newValue });
+        // console.log({ name, oldValue, newValue });
         
         if ( oldValue === newValue ) {
             return;

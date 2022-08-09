@@ -1,0 +1,23 @@
+.container {
+    margin: 20px 100px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+}
+
+.progress {
+    background-color: #d0d3d5;
+    border-radius: 5px;
+    height: 1.2rem;
+}
+
+
+.progress-bar {
+    background-color: #1770f9;
+    border-radius: 0.25px;
+    height: 1.2rem;
+    border-radius: 5px;
+}

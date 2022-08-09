@@ -13,6 +13,7 @@
     <script src="/components/hero/hero.js" defer></script>
     <script src="/components/footer/footer.js" defer></script>
     <script src="/components/toast/toast.js" defer></script>
+    <script src="/components/progress/progress.js" defer></script>
 
     <navbar-component></navbar-component>
     <hero-component 
@@ -21,13 +22,22 @@
         image="./img/woman_1.jpg"
     ></hero-component>
     <div class="text-center">
-        <h1>Toast block</h1>
+        <h2>Progress bar Block</h2>
+        <p>Se utilizan para emular procesos de carga</p>
+        <progress-component value="0"></progress-component>
+        <progress-component value="20"></progress-component>
+        <progress-component value="40" color="#0dcaf0"></progress-component>
+        <progress-component value="80" color="#dc3545"></progress-component>
+        <progress-component class="animated" color="#198754"></progress-component>
+    </div>
+    <div class="text-center">
+        <h2>Toast block</h2>
         <p>
             Se utilizan para mostrar mensajes emergentes, 
             en diferentes partes de la pantalla
         </p>
         <p>
-            <toast-component text="my first toast"></toast-component>
+            <toast-component text="Atomic Design"></toast-component>
             <button class="modal-button" id="toast-trigger" type="button">Abrir Toast</button>
         </p>
     </div>
