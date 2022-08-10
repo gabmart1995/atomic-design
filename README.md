@@ -9,8 +9,9 @@ create a dynamic component, just need the fundamentals.
 - custom elements
 - templates and slots
 
-"inspirated in article in blog of Atomic Design of Steven Hay"
-https://bradfrost.com/blog/post/atomic-web-design/
+inspirated in article in blog of:
+["Atomic Design of Steven Hay"](https://bradfrost.com/blog/post/atomic-web-design/)
+["Design web components"](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 
 ## what contains
 examples of components used in web pages and aplications, result of exprerienced years
@@ -23,6 +24,7 @@ working with frameworks and libraries:
 - hero
 - progress bar
 - toast
+- switch
 
 ### show in page
-deploy in any web server ( apache, nginx, express ... ) in public folder and ready in local browser
+deploy in any web server ( apache, nginx, express ... ) in public folder and ready in local browser.

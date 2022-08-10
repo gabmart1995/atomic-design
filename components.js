@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let posts = [];
 
     // events
-    paginationComponent.addEventListener('change', ( $event ) => {
+    paginationComponent.addEventListener('paginate', ( $event ) => {
         const { start, end } = $event.detail;
         changePage( start, end );
     });

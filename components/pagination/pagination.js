@@ -82,10 +82,10 @@ class Pagination extends HTMLElement {
 
     dispatchPagination() {
 
-        let start = this.page === 1 ? 0 : ( ( this.page * this._pagination ) - this.pagination  );
-        let end = start + 10; 
+        let start = this.page === 1 ? 0 : ( ( this.page * this._pagination ) - this._pagination  );
+        let end = start + this._pagination; 
 
-        const changeEvent = new CustomEvent('change', {
+        const changeEvent = new CustomEvent('paginate', {
             detail: {
                 start,
                 end
