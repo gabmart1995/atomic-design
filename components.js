@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         tBody.innerHTML = postsData.map( post => {
             return (`
-            <tr>
-                <td>${post.id}</td>
-                <td>${post.title}</td>
-            </tr>
+                <tr>
+                    <td>${post.id}</td>
+                    <td>${post.title}</td>
+                </tr>
             `)
         }).join('');
     }

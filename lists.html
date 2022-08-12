@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" />
+    <title>Collapse components</title>
+    <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/hero/hero.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="/components/collapse/collapse.js" defer></script>
+
+    <navbar-component></navbar-component>
+    <hero-component 
+        title="Atomic Design"
+        message="El desarrollo en pequenos bloques de codigo reutilizables"
+        image="./img/woman_1.jpg"
+    ></hero-component>
+    <section class="text-center">
+        <h2>Lists Collapse block (componente con slots)</h2>
+        <p>Listas que collapsan dependiendo del tamaño de la información</p>
+        <div id="collapse-theme"></div>
+    </section>
+    <footer-component></footer-component>
+    <script src="/lists.js"></script>
+</body>
+</html>
