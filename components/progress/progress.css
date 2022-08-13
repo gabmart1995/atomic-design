@@ -1,17 +1,8 @@
-.container {
-    margin: 20px 100px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        margin: 10px;
-    }
-}
-
 .progress {
     background-color: #d0d3d5;
     border-radius: 5px;
     height: 1.2rem;
+    margin-bottom: 20px;
 }
 
 
