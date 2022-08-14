@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Load in html</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
+    <script src="/js/lazysizes.min.js" async></script>
+</head>
+<body>
+    <script src="/components/hero/hero.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="/components/navbar/navbar.js" defer></script>
+
+    <navbar-component></navbar-component>
+    <hero-component 
+        title="Atomic Design"
+        message="El desarrollo en pequenos bloques de codigo reutilizables"
+        image="./img/image_2.jpg"
+    ></hero-component>
+    <section class="text-center">
+        <h2>Lazy load (Interception observer API)</h2>
+        <p>Carga de imagenes de forma perezoza mientras se navega en el sitio web.</p>
+        <div id="images"></div>
+    </section>
+    <footer-component></footer-component>
+    <script src="/lazy.js"></script>
+</body>
+</html>

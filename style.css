@@ -223,4 +223,38 @@ form label {
     align-items: center;
 }
 
+
+/* lazy section */
+#images {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#images img {
+    display: block;
+    width: 700px;
+    height: auto;
+}
+
+@media screen and ( max-width: 768px ) {
+    #images img {
+        display: block;
+        min-width: 250px;
+        width: 100%;
+        height: auto;
+    }
+}
  
+#images .border-photo {
+    padding: 10px;
+    border: 1px solid #bbb7b7;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*#images .border-photo:last-child {
+    margin-bottom: 0;
+}*/
