@@ -36,33 +36,30 @@ document.addEventListener('DOMContentLoaded', () => {
     /** construye un observador en el ultima imagen */
     const setObserver = () => {
         
-        const options = {
-            threshold: 0.5
-        };
-
+        const options = { threshold: 0.5 };
         const lastImage = images.lastElementChild.querySelector('img');
-        const observer = new IntersectionObserver(( entries ) => {
-            
-            // console.log( entries );
 
-            entries.forEach( entry => {
-
-                if ( entry.isIntersecting ) {
-                    
-                    if ( countRendered > 2 ) {
-                        return;
+        if ( lastImage ) {
+            const observer = new IntersectionObserver(( entries ) => {
+                entries.forEach( entry => {
+    
+                    if ( entry.isIntersecting ) {
+                        
+                        if ( countRendered > 2 ) {
+                            return;
+                        }
+                        
+                        getImages();
                     }
-                    
-                    getImages();
-                }
-            });
-
-        }, options );
-
-        observer.observe( lastImage );
-
-        // incrementamos la cantidad del renderizado
-        countRendered++;
+                });
+    
+            }, options );
+    
+            observer.observe( lastImage );
+    
+            // incrementamos la cantidad del renderizado
+            countRendered++;
+        }
     }
 
     getImages();
