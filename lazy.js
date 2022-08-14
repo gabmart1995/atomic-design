@@ -38,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const options = { threshold: 0.5 };
         const lastImage = images.lastElementChild.querySelector('img');
-
+        
         if ( lastImage ) {
             const observer = new IntersectionObserver(( entries ) => {
                 entries.forEach( entry => {
-    
+                    
                     if ( entry.isIntersecting ) {
                         
                         if ( countRendered > 2 ) {
@@ -52,9 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         getImages();
                     }
                 });
-    
+                
             }, options );
-    
+            
+            // observamos la ultima imagen
             observer.observe( lastImage );
     
             // incrementamos la cantidad del renderizado
