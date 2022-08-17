@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de componentes WebAssembly</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <script src="/components/hero/hero.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="/components/navbar/navbar.js" defer></script>
+
+    <navbar-component></navbar-component>
+    <hero-component 
+        title="Atomic Design"
+        message="El desarrollo en pequenos bloques de codigo reutilizables"
+        image="./img/image_2.jpg"
+    ></hero-component>
+    <section class="text-center">
+        <h2>Web Assembly</h2>
+        <p class="text-justify"> 
+            Es una tecnología que permite la construcción de modulos en lenguajes compilados ( GO, Rust, C++, AssemblyScript ) 
+            que pueden ser consumidas y utilizadas por el navegador. Se creo para dar apoyo a Javascript, para procesar tareas
+            muy complejas que requieren de alto poder de procesamiento. <br /> <br /> 
+            
+            Su uso en la vida real es la renderización de imágenes y videos de alta calidad, 
+            implementar algoritmos hash, emulación de diseños en 3D, diseños de robotica, algoritmos de predicción de desastres, 
+            correr videojuegos y compiladores desde la web, entre otros. <br /> <br />
+
+            Nota: para este ejemplo utilizamos GO puedes instalarlo desde su <a href="https://go.dev">Web oficial</a> <br><br />
+        
+            A continuación un ejemplo construido en GO, primero debes obtener el archivo de conexión
+            en Javascript en Golang puedes utilizar el siguiente codigo: <br><br>
+            <code>cp "$(go env GOROOT)/misc/wasm/wasm.exec.js" .</code> <br> <br>
+
+            Realiza una copia del archivo de conexión lo siguiente es compilar 
+            el codigo fuente de GO a .wasm <br /> <br />
+            <code>GOOS=js GOARCH=wasm go build -o first-module.wasm main.go </code> <br> <br>
+
+            Una vez compilado pasas el ejecutable y el archivo de conexión al proyecto en la web y listo para trabajar.
+        </p>
+    </section>
+    <section class="text-center">
+        <h3 class="text-left">Ejemplo 1: mostrar mensaje por consola del navegador desde GO</h3>
+        <button id="runButton" class="modal-button" disabled>Ejecutar archivo .wasm</button>
+    </section>
+    <section class="text-center">
+        <h3 class="text-left">Ejemplo 2: obtener un hash cifrado a partir de un mensaje</h3>
+        <div class="grid-wasm">
+            <form class="hash-module">
+                <div class="grid-wasm">
+                    <label class="wasm-flex text-left" for="mensaje">Mensaje a cifrar:</label>
+                    <input type="text" name="mensaje" id="mensaje" />
+                </div>
+                <p class="text-left">
+                    <button type="submit" class="modal-button">Ejecutar hash</button>
+                </p>
+            </form>
+            <div>
+                <p class="text-left">
+                    <b>Resultado: <br><span></span></b>
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer-component></footer-component>
+    <!-- cargamos el archivo de conexion -->
+    <script src="/js/wasm_exec.js"></script>
+    <script src="/webAssembly.js"></script>
+</body>
+</html>
