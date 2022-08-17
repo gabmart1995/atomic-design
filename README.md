@@ -25,6 +25,9 @@ working with frameworks and libraries:
 - progress bar
 - toast
 - switch
+- lazy load examples
+- web assembly examples
+
 
 ### show in page
 deploy in any web server ( apache, nginx, express ... ) in public folder and ready in local browser.
