@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    loadWasm('/wasm/hash-module/hash.wasm', ( wasm ) => {
+    loadWasm('/wasm/hash-module/hash-module.wasm', ( wasm ) => {
         if ( wasm ) {
             const { go, instance } = wasm;
             go.run( instance );
