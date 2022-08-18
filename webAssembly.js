@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     };
 
-    loadWasm('/wasm/greetings/greetings.wasm', ( instance ) => {
+    loadWasm('/wasm/greetings-module/greetings.wasm', ( instance ) => {
         if ( instance ) {
             // activamos el boton
             // añadimos el evento
