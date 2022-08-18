@@ -47,20 +47,35 @@
         <button id="runButton" class="modal-button" disabled>Ejecutar archivo .wasm</button>
     </section>
     <section class="text-center">
-        <h3 class="text-left">Ejemplo 2: obtener un hash cifrado a partir de un mensaje</h3>
+        <h3 class="text-left">Ejemplo 2: ejemplo de calculadora</h3>
         <div class="grid-wasm">
-            <form class="hash-module">
-                <div class="grid-wasm">
-                    <label class="wasm-flex text-left" for="mensaje">Mensaje a cifrar:</label>
-                    <input type="text" name="mensaje" id="mensaje" />
+            <div>
+                <div class="grid-wasm" style="margin-bottom: 20px;">
+                    <label class="wasm-flex text-left" for="value_1">Numero 1</label>
+                    <input type="text" name="value_1" id="value_1" />
                 </div>
-                <p class="text-left">
-                    <button type="submit" class="modal-button">Ejecutar hash</button>
-                </p>
-            </form>
+                <div class="grid-wasm" style="margin-bottom: 20px;">
+                    <label class="wasm-flex text-left" for="value_2">Numero 2</label>
+                    <input type="text" name="value_2" id="value_2" />                
+                </div>
+                <div class="text-left">
+                    <button 
+                        class="modal-button" 
+                        onclick="add('#value_1', '#value_2', '#result');"
+                    >
+                        Sumar
+                    </button>
+                    <button 
+                        class="modal-button"
+                        onclick="substract('#value_1', '#value_2', '#result');"    
+                    >
+                        Restar
+                    </button>
+                </div>
+            </div>
             <div>
                 <p class="text-left">
-                    <b>Resultado: <br><span></span></b>
+                    Resultado: <b><span id="result"></span></b>
                 </p>
             </div>
         </div>
