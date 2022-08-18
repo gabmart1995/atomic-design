@@ -42,11 +42,12 @@
             Una vez compilado pasas el ejecutable y el archivo de conexión al proyecto en la web y listo para trabajar.
         </p>
     </section>
-    <section class="text-center">
-        <h3 class="text-left">Ejemplo 1: mostrar mensaje por consola del navegador</h3>
+    <section class="text-left">
+        <h3>Ejemplo 1: mostrar mensaje por consola del navegador</h3>
         <button id="runButton" class="modal-button" disabled>Ejecutar archivo .wasm</button>
     </section>
     <section class="text-center">
+
         <h3 class="text-left">Ejemplo 2: ejemplo de calculadora desde un .wasm</h3>
         <div class="grid-wasm">
             <div>
@@ -71,11 +72,48 @@
                     >
                         Restar
                     </button>
+                    <button 
+                        class="modal-button"
+                        onclick="multiply('#value_1', '#value_2', '#result');"    
+                    >
+                        Multiplicar
+                    </button>
+                    <button 
+                        class="modal-button"
+                        onclick="divide('#value_1', '#value_2', '#result');"    
+                    >
+                        Dividir
+                    </button>
                 </div>
             </div>
             <div>
                 <p class="text-left">
                     Resultado: <b><span id="result"></span></b>
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <section class="text-center">
+        <h3 class="text-left">Ejemplo 3: encriptar un mensaje usando un SHA1</h3>
+        <div class="grid-wasm">
+            <div>
+                <div class="grid-wasm" style="margin-bottom: 20px;">
+                    <label class="wasm-flex text-left" for="value_hash">Mensaje</label>
+                    <input type="text" name="value_hash" id="value_hash" />
+                </div>
+                <div class="text-left">
+                    <button 
+                        class="modal-button"
+                        onclick="generateHash('#value_hash', '#result-hash');"    
+                    >
+                        Generar hash
+                    </button>
+                </div>
+            </div>
+            <div>
+                <p class="text-left">
+                    Resultado hash: <br><br> <b><span id="result-hash"></span></b>
                 </p>
             </div>
         </div>

@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    const button = document.querySelector('#runButton');
-
-    /**
-     * Funcion que lee y carga en memoria el archivo .wasm
-     * @param {string} path - path al archivo .wasm 
-     * @param {*} callback - llamada de retorno a JavaScript 
-     * @returns 
-     */
     const loadWasm = async ( path, callback ) => {
         
         if ( !WebAssembly.instantiateStreaming ) {
@@ -15,44 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        let instance = null; 
-        let module = null;
-
-        // se crea la instancia de GO que controla la comunicacion con el binario
-        const go = new Go();
-        
-        const run = async () => {
-            await go.run( instance );
-            instance = await WebAssembly.instantiate( module, go.importObject ); // reset instance
-        };
-    
-        try {
-            const result = await WebAssembly.instantiateStreaming( 
-                await fetch( path ), 
-                go.importObject 
-            );
-    
-            instance = result.instance;
-            module = result.module;
-            
-            callback({ run });
-            
-        } catch ( error ) {
-            console.error( error );
-        }
-    
-    };
-
-    const loadWasmCalculator = async ( path ) => {
-        
-        if ( !WebAssembly.instantiateStreaming ) {
-            console.log('Tu navegador no soporta compilaciones en web assembly debes buscar un pollyfill');
-            return;
-        }
-        
-        let instance = null; 
-        let module = null;
-
         // se crea la instancia de GO que controla la comunicacion con el binario
         const go = new Go();
         
@@ -61,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 await fetch( path ), 
                 go.importObject 
             );
-    
-            instance = result.instance;
-            module = result.module;
             
-            // registramos las funciones de la calculadora
-            go.run( instance );
+            callback({ 
+                instance: result.instance, 
+                module: result.module, 
+                go 
+            });
             
         } catch ( error ) {
             console.error( error );
@@ -74,17 +28,35 @@ document.addEventListener('DOMContentLoaded', () => {
     
     };
 
-    loadWasm('/wasm/greetings-module/greetings.wasm', ( instance ) => {
-        if ( instance ) {
-            // activamos el boton
-            // añadimos el evento
+    loadWasm('/wasm/greetings-module/greetings.wasm', ( wasm ) => {
+        if ( wasm ) {
+            const { go, module } = wasm;
+            let { instance } = wasm;
 
+            const run = async () => {
+                go.run( instance );
+                instance = await WebAssembly.instantiate( module, go.importObject ); // reset instance
+            };
+
+            const button = document.querySelector('#runButton');
             button.disabled = false;
-            button.addEventListener('click', instance.run );
+            button.addEventListener('click', run );
         }
     });
 
-    loadWasmCalculator('/wasm/calculator-module/calculator.wasm');
+    loadWasm('/wasm/calculator-module/calculator.wasm', ( wasm ) => {
+        if ( wasm ) {
+            const { go, instance } = wasm;
+            go.run( instance );
+        }
+    });
+
+    loadWasm('/wasm/hash-module/hash.wasm', ( wasm ) => {
+        if ( wasm ) {
+            const { go, instance } = wasm;
+            go.run( instance );
+        }
+    });
 });
 
 

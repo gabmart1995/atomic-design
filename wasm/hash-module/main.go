@@ -1,36 +1,57 @@
 package main
 
-import "syscall/js"
+import (
+	"crypto/sha1"
+	"encoding/hex"
+	"syscall/js"
+)
 
 /*
-*	Calculator module
+*	Hash module
  */
 
-func add(i []js.Value) {
+func generateHash(this js.Value, args []js.Value) interface{} {
 
-	// parseamos el valor a un entero
-	value1 := i[0].Int()
-	value2 := i[1].Int()
+	value := js.Global().
+		Get("document").
+		Call("querySelector", args[0].String()).
+		Get("value").
+		String()
 
-	// generamos la salida
-	js.Global().Set("output", value1+value2)
+	if len(value) > 0 {
 
-	println((value1 + value2).String())
-}
+		hashInstance := sha1.New()
+		hashInstance.Write([]byte(value))
+		sha1Hash := hex.EncodeToString(hashInstance.Sum(nil))
 
-func substact() {
+		// fmt.Println(value, sha1Hash)
+
+		// establecemos el valor en el result del dom
+		js.Global().
+			Get("document").
+			Call("querySelector", args[1].String()).
+			Set("innerHTML", sha1Hash)
+
+	} else {
+		// establecemos el valor en el result del dom
+		js.Global().
+			Get("document").
+			Call("querySelector", args[1].String()).
+			Set("innerHTML", "Ingresa un mensaje")
+	}
+
+	return js.Undefined()
 }
 
 func registerCallbacks() {
-	js.Global().Set("add", js.NewCallback(add))
-	js.Global().Set("substract", js.NewCallback(substact))
+	js.Global().Set("generateHash", js.FuncOf(generateHash))
 }
 
 func main() {
 
 	channel := make(chan struct{}, 0)
 
-	println("WASM Go initialized")
+	println("WASM Go Hash Module initialized")
 
 	registerCallbacks()
 
