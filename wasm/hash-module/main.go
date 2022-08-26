@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/sha1"
 	"encoding/hex"
+	"fmt"
 	"syscall/js"
 )
 
@@ -19,6 +20,8 @@ func generateHash(this js.Value, args []js.Value) interface{} {
 		String()
 
 	if len(value) > 0 {
+
+		fmt.Println(value)
 
 		hashInstance := sha1.New()
 		hashInstance.Write([]byte(value))

@@ -27,5 +27,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     }
 
+    const renderTabs = () => {
+        const tabsContent = [
+            {
+                title: 'London',
+                content: 'London capital of england'
+            },
+            {
+                title: 'Paris',
+                content: 'Paris capital of france'
+            },
+            {
+                title: 'Tokyo',
+                content: 'Tokyo capital of Japan'
+            },
+            {
+                title: 'Caracas',
+                content: 'Caracas capital of Venezuela'
+            }
+        ];
+
+        const tabCompenent = document.querySelector('tab-component');
+        tabCompenent._buttons = tabsContent.map( content => content.title );
+        tabCompenent._content = tabsContent;
+    }
+
     renderCollapse();
+    renderTabs();
 });

@@ -23,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
         } catch ( error ) {
+            /**
+             * El error puede ser muchas causas desde que el servidor 
+             * de produccion no reconozca el mime del archivo webassembly
+             * que es el error más comun dentro de apache
+             * 
+             * @see "https://blog.toddlichty.com/serving-a-wasm-file-from-apache/"
+             */
             console.error( error );
         }
     
