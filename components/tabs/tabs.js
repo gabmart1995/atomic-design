@@ -38,7 +38,7 @@ class Tabs extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('./components/tabs/tabs.html')
+        fetch('/components/tabs/tabs.html')
             .then( response =>  response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text;
