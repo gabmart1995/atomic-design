@@ -17,25 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
     
         const collapseThemes = document.querySelector('#collapse-theme');
-
-        collapseThemes.innerHTML = themes.map(( theme ) => {
-            return (`
-                <collapse-component title="${theme.title}">
-                    <p slot="content">${theme.content}</p>
-                </collapse-component>
-            `)
-        }).join('');
+        collapseThemes.innerHTML = themes.map(({ title, content }) => (`
+            <collapse-component title="${title}">
+                <p slot="content">${content}</p>
+            </collapse-component>
+        `)).join('');
     }
 
     const renderTabs = () => {
         const tabsContent = [
             {
                 title: 'London',
-                content: 'London capital of england'
+                content: 'London capital of England'
             },
             {
                 title: 'Paris',
-                content: 'Paris capital of france'
+                content: 'Paris capital of France'
             },
             {
                 title: 'Tokyo',
@@ -44,6 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 title: 'Caracas',
                 content: 'Caracas capital of Venezuela'
+            },
+            {
+                title: 'Madrid',
+                content: 'Madrid capital of Spain'
+            },
+            {
+                title: 'Washington DC',
+                content: 'Washington DC capital of United States'
             }
         ];
 

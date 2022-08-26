@@ -1,14 +1,16 @@
 class Tabs extends HTMLElement {
     
+    /** @type Array<HTMLButtonElement> */
+    buttons = [];
+    
+
+    /** @type Array<HTMLDivElement> */
+    contents = [];
+
     /** Properties
      *  buttons Array<string>
      *  content Array<{ title: string, content: string }> 
      */
-
-    // array of buttons html
-    buttons = [];
-    contents = [];
-
     static get observedAttributes() {
         return ['buttons', 'content'];
     }
@@ -16,7 +18,6 @@ class Tabs extends HTMLElement {
     constructor() {
         super();
         this.shadowDom = this.attachShadow({ mode: 'closed' });
-        this.ready = false;
     }
 
     set _buttons( value ) {
@@ -64,6 +65,7 @@ class Tabs extends HTMLElement {
         const button = $event.target;
         const tabSelected = button.getAttribute('tab');        
         
+        // add class active
         this.buttons.forEach( butt => {
 
             if ( butt.isSameNode( button ) ) {
@@ -74,6 +76,7 @@ class Tabs extends HTMLElement {
             butt.classList.remove('active');
         });
         
+        // show or hide the content
         this.contents.forEach( content => {
             
             if ( content.id === tabSelected ) {
@@ -97,6 +100,14 @@ class Tabs extends HTMLElement {
             <div class="tab-content" id="${title.toLowerCase()}">
                 <h3 class="text-left">${title}</h3>
                 <p>${content}</p>
+                <!--<p style="text-align: justify;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lobortis ligula 
+                    velit, vulputate fermentum ante ornare ut. Pellentesque convallis rhoncus mi, a 
+                    fringilla quam interdum at. Fusce in nisi massa. Morbi ac sem sem. Vestibulum 
+                    semper ex a varius vulputate. Quisque consectetur purus eget massa gravida, 
+                    nec pellentesque massa consectetur. Donec suscipit vehicula mauris vitae mattis. 
+                    Maecenas ac metus ornare, tincidunt nibh eu, lobortis ex.
+                </p> -->
             </div>
         `)).join('');
         
@@ -113,4 +124,4 @@ class Tabs extends HTMLElement {
     }
 }
 
-customElements.define('tab-component', Tabs)
+customElements.define('tab-component', Tabs );
