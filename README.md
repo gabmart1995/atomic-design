@@ -12,10 +12,10 @@ create a dynamic component, just need the fundamentals.
 inspirated in article in blog of:  
 ["Atomic Design of Steven Hay"](https://bradfrost.com/blog/post/atomic-web-design/)  
 ["Design web components"](https://developer.mozilla.org/en-US/docs/Web/Web_Components)  
-["web components"]("https://developer.mozilla.org/en-US/docs/Web/Web_Components")
+["Web components"]("https://developer.mozilla.org/en-US/docs/Web/Web_Components")
 
 code updated of  
-["w3 schools"]("https://www.w3schools.com")
+["W3 schools"]("https://www.w3schools.com")
 
 ## what contains
 examples of components used in web pages and aplications, result of exprerienced years
