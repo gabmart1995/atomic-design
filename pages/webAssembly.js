@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let { instance } = wasm;
 
             const run = async () => {
+                console.clear();
                 go.run( instance );
                 instance = await WebAssembly.instantiate( module, go.importObject ); // reset instance
             };
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if ( wasm ) {
             const { go, instance } = wasm;
             go.run( instance );
+
         }
     });
 });

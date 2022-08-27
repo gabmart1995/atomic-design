@@ -6,6 +6,8 @@ import (
 	"syscall/js"
 )
 
+var jsDoc = js.Global().Get("document")
+
 /* funcion de suma en JS */
 func add(this js.Value, args []js.Value) interface{} {
 
@@ -15,8 +17,8 @@ func add(this js.Value, args []js.Value) interface{} {
 	param3 := args[2].String()
 
 	// obtenemos el valor del input de entrada del formulario desde el frontend
-	value1 := js.Global().Get("document").Call("querySelector", param1).Get("value").String()
-	value2 := js.Global().Get("document").Call("querySelector", param2).Get("value").String()
+	value1 := jsDoc.Call("querySelector", param1).Get("value").String()
+	value2 := jsDoc.Call("querySelector", param2).Get("value").String()
 
 	int1, _ := strconv.ParseFloat(value1, 32)
 	int2, _ := strconv.ParseFloat(value2, 32)
@@ -30,7 +32,7 @@ func add(this js.Value, args []js.Value) interface{} {
 	result := fmt.Sprintf("%.2f", int1+int2)
 
 	// establecemos el valor en el result del dom
-	js.Global().Get("document").Call("querySelector", param3).Set("innerHTML", result)
+	jsDoc.Call("querySelector", param3).Set("innerHTML", result)
 
 	// retornamos undefined a la interface
 	return js.Undefined()
@@ -44,8 +46,8 @@ func substract(this js.Value, args []js.Value) interface{} {
 	param3 := args[2].String()
 
 	// obtenemos el valor del input de entrada del formulario desde el frontend
-	value1 := js.Global().Get("document").Call("querySelector", param1).Get("value").String()
-	value2 := js.Global().Get("document").Call("querySelector", param2).Get("value").String()
+	value1 := jsDoc.Call("querySelector", param1).Get("value").String()
+	value2 := jsDoc.Call("querySelector", param2).Get("value").String()
 
 	int1, _ := strconv.ParseFloat(value1, 32)
 	int2, _ := strconv.ParseFloat(value2, 32)
@@ -59,7 +61,7 @@ func substract(this js.Value, args []js.Value) interface{} {
 	result := fmt.Sprintf("%.2f", int1-int2)
 
 	// establecemos el valor en el result del dom
-	js.Global().Get("document").Call("querySelector", param3).Set("innerHTML", result)
+	jsDoc.Call("querySelector", param3).Set("innerHTML", result)
 
 	// retornamos undefined a la interface
 	return js.Undefined()
@@ -73,8 +75,8 @@ func multiply(this js.Value, args []js.Value) interface{} {
 	param3 := args[2].String()
 
 	// obtenemos el valor del input de entrada del formulario desde el frontend
-	value1 := js.Global().Get("document").Call("querySelector", param1).Get("value").String()
-	value2 := js.Global().Get("document").Call("querySelector", param2).Get("value").String()
+	value1 := jsDoc.Call("querySelector", param1).Get("value").String()
+	value2 := jsDoc.Call("querySelector", param2).Get("value").String()
 
 	int1, _ := strconv.ParseFloat(value1, 32)
 	int2, _ := strconv.ParseFloat(value2, 32)
@@ -88,7 +90,7 @@ func multiply(this js.Value, args []js.Value) interface{} {
 	result := fmt.Sprintf("%.2f", int1*int2)
 
 	// establecemos el valor en el result del dom
-	js.Global().Get("document").Call("querySelector", param3).Set("innerHTML", result)
+	jsDoc.Call("querySelector", param3).Set("innerHTML", result)
 
 	// retornamos undefined a la interface
 	return js.Undefined()
@@ -102,8 +104,8 @@ func divide(this js.Value, args []js.Value) interface{} {
 	param3 := args[2].String()
 
 	// obtenemos el valor del input de entrada del formulario desde el frontend
-	value1 := js.Global().Get("document").Call("querySelector", param1).Get("value").String()
-	value2 := js.Global().Get("document").Call("querySelector", param2).Get("value").String()
+	value1 := jsDoc.Call("querySelector", param1).Get("value").String()
+	value2 := jsDoc.Call("querySelector", param2).Get("value").String()
 
 	int1, _ := strconv.ParseFloat(value1, 32)
 	int2, _ := strconv.ParseFloat(value2, 32)
@@ -115,12 +117,12 @@ func divide(this js.Value, args []js.Value) interface{} {
 	// fmt.Println( value2 )
 
 	if int2 == 0 {
-		js.Global().Get("document").Call("querySelector", param3).Set("innerHTML", "No se puede dividir entre 0")
+		jsDoc.Call("querySelector", param3).Set("innerHTML", "No se puede dividir entre 0")
 	} else {
 		result := fmt.Sprintf("%.2f", int1/int2)
 
 		// establecemos el valor en el result del dom
-		js.Global().Get("document").Call("querySelector", param3).Set("innerHTML", result)
+		jsDoc.Call("querySelector", param3).Set("innerHTML", result)
 	}
 
 	// retornamos undefined a la interface
