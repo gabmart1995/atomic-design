@@ -39,11 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
         switchElement.innerHTML = foods.map( food => {
             return (`
                 <div class="column">
-                    <switch-component></switch-component>
+                    <switch-component name="${food.toLowerCase()}"></switch-component>
                     <label class="text-left">${food}</label>
                 </div>
             `);
         }).join('');
+
+        const switchElements = document.querySelectorAll('switch-component');        
+        switchElements.forEach( element => {
+            element.addEventListener('change-switch', ( $event ) => {
+                console.log( $event.detail );
+            });
+        });
     };
 
     buttonToast.addEventListener('click', () => {
