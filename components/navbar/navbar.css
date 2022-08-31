@@ -15,7 +15,7 @@ nav {
         height: auto;
     }
 }
- 
+
 nav .logo {
     font-size: 20px;
     display: flex;
@@ -47,6 +47,9 @@ nav ul {
         grid-column:  1 / 3;
         display: flex;
         flex-direction: column;
+        transition: max-height 0.2s ease-out;
+        max-height: 0;
+        overflow: hidden; /* oculta el contenido desbordado */
     }
 
     .responsive-only {
