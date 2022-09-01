@@ -3,7 +3,7 @@ class Radio extends HTMLElement {
         super();
 
         // el radio no debe tener shadow dom porque aislas el 
-        // evento del formulario no reconoce el cambio y no desmarca el elemento
+        // evento del formulario impidiendo reconocer el cambio y no desmarca el elemento
         
         // this.shadowDom = this.attachShadow({ mode: 'open' });
     }
