@@ -1,3 +1,50 @@
+/** Patron observador para renderizar el numero de pagina */
+class Subject {
+    constructor () {
+        this.observers = [];
+    }
+
+    susbscribeObserver( observer ) {
+        this.observers.push( observer );
+    }
+
+    unsubscribeObserver( observer ) {
+        let index = this.observers.indexOf( observer );
+
+        if ( index > -1 ) {
+            // borra un elemento de la lista
+            this.observers.splice( index, 1 );
+        }
+    }
+
+    notifyObserver( observer, callback ) {
+        let index = this.observers.indexOf( observer );
+
+        if ( index > -1 ) {
+            this.observers[index].notify( index, callback );
+        }
+    }
+
+    notifyAllObservers( callback ) {
+        for ( let index in this.observers ) {
+            this.observers[ index ].notify( index, callback );
+        }
+    }
+}
+
+class Observer {
+
+    /** funcion que controla las notificaciones del evento */
+    notify( index, callback ) {
+
+        // puedes crear un registro de cuantas veces cambia la
+        // pagina
+
+        console.log("Observer " + index + " is notified!");
+        callback();
+    }
+}
+
 class Pagination extends HTMLElement {
     
     page = 1;
@@ -26,6 +73,17 @@ class Pagination extends HTMLElement {
     constructor() {
         super();
         this.shadowDom = this.attachShadow({ mode: 'closed' });
+
+        // observer from page
+        this.subject = new Subject();
+        this.pageObserver = new Observer();
+
+        // registramos el obervador
+        this.subject.susbscribeObserver( this.pageObserver );
+    }
+
+    disconnectedCallback() {
+        this.subject.unsubscribeObserver( this.pageObserver );
     }
 
     connectedCallback() {
@@ -93,7 +151,7 @@ class Pagination extends HTMLElement {
         });
 
         this.dispatchEvent( changeEvent );
-        this.updatePage()
+        this.subject.notifyObserver( this.pageObserver, this.updatePage.bind( this ) );
     }
 
     updatePage() {
@@ -109,6 +167,12 @@ class Pagination extends HTMLElement {
         const totalSpan = this.shadowDom.querySelector('span#count');
         totalSpan.innerText = this._total;
 
+        // notifica al observer que se actualizado la pagina
+        this.subject.notifyObserver( 
+            this.pageObserver, 
+            this.updatePage.bind( this ) 
+        );
+
         const spanEnd = this.shadowDom.querySelector('span#end');
         spanEnd.innerText = this.limit;
         
@@ -117,8 +181,6 @@ class Pagination extends HTMLElement {
         
         const nextButton = this.shadowDom.querySelector('.next');
         nextButton.addEventListener('click', this.handleNext.bind( this ));
-        
-        this.updatePage();
     }
 
 }
