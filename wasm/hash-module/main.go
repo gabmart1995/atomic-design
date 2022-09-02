@@ -17,7 +17,6 @@ var jsConsole = js.Global().Get("console")
 func createHash(this js.Value, args []js.Value) interface{} {
 
 	// get the document DOM of Javascript
-	jsDoc := js.Global().Get("document")
 	value := jsDoc.Call("querySelector", args[0].String()).
 		Get("value").
 		String()

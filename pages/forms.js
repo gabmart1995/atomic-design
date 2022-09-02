@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorsName = form.querySelector('#errors-name');
     const errorsMessage = form.querySelector('#errors-message');
 
+    // signature ...
+    const signature = document.querySelector('signature-component');
+    signature.addEventListener('signature', ( $event ) => {
+        const { imageURL } = $event.detail;
+        window.open(imageURL, '_blank');
+    });
+
+    // forms ..
     const resetForm = () => {        
         errorsName.classList.replace('d-block', 'd-none');
         errorsEmail.classList.replace('d-block', 'd-none');

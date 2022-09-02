@@ -1,0 +1,47 @@
+canvas {
+    background-color: #fff;
+    border: 1px solid #9b9a9a;
+    border-radius: 5px;
+}
+
+.grid-signature {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+    .grid-signature  {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+.grid-signature div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-signature div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.modal-button {
+    padding: 10px 15px;
+    color: #fff;
+    background: #1770f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.modal-button:hover {
+    background-color: #1255be;
+}
