@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const signature = document.querySelector('signature-component');
     signature.addEventListener('signature', ( $event ) => {
         const { imageURL } = $event.detail;
-        window.open(imageURL, '_blank');
+        console.log( imageURL );
+        // window.open(imageURL, '_blank');
     });
 
     // forms ..
