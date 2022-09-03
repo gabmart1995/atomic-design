@@ -63,7 +63,7 @@ class Tabs extends HTMLElement {
     handleClick( $event ) {
 
         const button = $event.target;
-        const tabSelected = button.getAttribute('tab');        
+        const tabSelected = button.getAttribute('aria-tab');        
         
         // add class active
         this.buttons.forEach( butt => {
@@ -92,7 +92,7 @@ class Tabs extends HTMLElement {
 
         const tabContainer = this.shadowDom.querySelector('#tab-container');
         tabContainer.innerHTML = this._buttons.map( text => (`
-            <button class="tab-button" tab="${text.toLowerCase()}">${text}</button>
+            <button class="tab-button" aria-tab="${text.toLowerCase()}">${text}</button>
         `)).join('');
         
         const tabContainerContent = this.shadowDom.querySelector('#tab-container-content');
