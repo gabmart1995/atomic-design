@@ -1,5 +1,5 @@
 
-class MyComponent extends HTMLElement {
+class TimerComponent extends HTMLElement {
 	constructor() {
 		super();
 		this.shadowDom = this.attachShadow({ mode: 'closed' });
@@ -164,5 +164,5 @@ class MyComponent extends HTMLElement {
 	}
 }
 
-customElements.define('timer-component', MyComponent);
+customElements.define('timer-component', TimerComponent);
 	
