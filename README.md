@@ -17,7 +17,7 @@ code updated of
 ["w3 schools"](https://www.w3schools.com)
 
 ## what contains
-examples of components used in web pages and aplications, result of exprerienced years
+examples of web components used in web pages and aplications, result of exprerienced years
 working with frameworks and libraries:
 
 - paginations and tables
@@ -31,6 +31,7 @@ working with frameworks and libraries:
 - switch
 - lazy load examples
 - web assembly examples
+- signature component
 
 
 ### show in page

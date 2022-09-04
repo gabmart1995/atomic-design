@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics and canvas</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+</head>
+<body>
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/hero/hero.js" defer></script>
+    <script src="/components/footer/footer.js" defer></script>
+    <script src="/components/timer/timer-component.js"></script>
+    <script src="/components/signature/signature.js" defer></script>
+
+    <navbar-component></navbar-component>
+    <hero-component 
+        title="Atomic Design"
+        message="El desarrollo en pequeños bloques de codigo reutilizables"
+        image="/img/people_1.jpg"
+    ></hero-component>
+    <section class="text-center">
+        <h2>Timer block</h2>
+        <p>Diseño de canvas de un reloj</p>
+        <timer-component width-canvas="250" height-canvas="250"></timer-component>
+    </section>
+    
+    <section class="text-center">
+        <h2>Signature Block</h2>
+        <p>
+            Libreria Muy utilizada para verificación de firmas digitales con canvas y JavaScript <br>
+            Agradecimientos al equipo de <a href="https://github.com/szimek/signature_pad" target="_blank">Skimet</a>  y la comunidad.
+            <br> <br>
+            Prueba firmar el cuadro con el mouse
+        </p>
+        <signature-component height="250" width="320"></signature-component>
+    </section>
+    <footer-component></footer-component>
+</body>
+</html>
