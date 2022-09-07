@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return (`
                 <div class="column">
                     <switch-component name="${food.toLowerCase()}"></switch-component>
-                    <label class="text-left">${food}</label>
                 </div>
             `);
         }).join('');
