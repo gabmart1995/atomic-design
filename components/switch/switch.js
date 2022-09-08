@@ -39,8 +39,17 @@ class Switch extends HTMLElement {
     }
 
     render() {
+
+        /** @type {HTMLInputElement} */
         const input = this.shadowDom.querySelector('input[type="checkbox"]');
         input.setAttribute('name', this._name);
+        input.setAttribute('id', this._name);
+
+        /** @type {HTMLLabelElement} */
+        const label = this.shadowDom.querySelector('.label-container label');
+        label.setAttribute('for', this._name);
+        label.innerText = this._name;
+
         input.addEventListener('change', this.handleChange.bind( this )  );
     }
 }
