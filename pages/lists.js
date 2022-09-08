@@ -57,6 +57,30 @@ document.addEventListener('DOMContentLoaded', () => {
         tabCompenent._content = tabsContent;
     }
 
+    const renderSwiperSlider = () => {
+        const images = [
+            '/img/image_1.jpg',
+            '/img/woman_1.jpg',
+            '/img/meeting_1.jpg'
+        ];
+
+        const sliderComponent = document.querySelector('slider-swiper-component');
+        sliderComponent._images = images;
+    };
+
+    const renderSlider = () => {
+        const images = [
+            '/img/image_1.jpg',
+            '/img/woman_1.jpg',
+            '/img/meeting_1.jpg'
+        ];
+
+        const sliderComponent = document.querySelector('slider-component');
+        sliderComponent._images = images;
+    };
+
     renderCollapse();
     renderTabs();
+    renderSwiperSlider();
+    renderSlider();
 });

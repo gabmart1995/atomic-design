@@ -21,6 +21,12 @@ section {
     }   
 }
 
+.img-fluid {
+    height: auto;
+    width: 100%;
+}
+
+
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

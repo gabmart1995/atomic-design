@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css" />
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <title>Collapse components</title>
     <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <script src="/components/navbar/navbar.js" defer></script>
@@ -14,6 +17,8 @@
     <script src="/components/footer/footer.js" defer></script>
     <script src="/components/collapse/collapse.js" defer></script>
     <script src="/components/tabs/tabs.js" defer></script>
+    <script src="/components/slider-swiper/slider-component.js" defer></script>
+    <script src="/components/slider/slider-component.js" defer></script>
 
     <navbar-component></navbar-component>
     <hero-component 
@@ -32,10 +37,27 @@
         <tab-component></tab-component>
     </section>
     <section class="text-center">
-        <h2>Sliders block</h2>
-        <p>Componente muy utilizado para mostrar imagenes de productos</p>
+        <h2>Slideshow block</h2>
+        <p>
+            Componente muy utilizado para mostrar imagenes de productos <br> 
+            puede ser usando dentro de tarjetas o como hero principal.
+        </p>
+        <slider-component animated="true"></slider-component>
+    </section>
+    <section class="text-center">
+        <h2>Swiper block</h2>
+        <p>
+            Componente muy utilizado para mostrar imagenes de productos, usando elementos nativos <br> 
+            puede ser usando dentro de tarjetas o como hero principal <br> <br>
+            
+            Librería utilizada <a href="https://swiperjs.com">swiper.js</a> 
+        </p>
+        <slider-swiper-component></slider-swiper-component>
     </section>
     <footer-component></footer-component>
+
+    <!-- swiper script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="/pages/lists.js"></script>
 </body>
 </html>

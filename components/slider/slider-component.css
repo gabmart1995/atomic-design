@@ -1,0 +1,58 @@
+
+/* web-component create-app-cli */	
+.slider-container {
+    height: 400px;
+    width: 600px;
+    position: relative;
+}
+
+@media screen and ( max-width: 768px ) {
+    .slider-container {
+        width: 100%;
+        height: 250px;
+    }  
+}
+
+.slider-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container button {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.slider-container #prev {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: 0;
+}
+
+.slider-container #next {
+    position: absolute;
+    top: calc(50% - 15px);
+    right: 0;
+}
+
+ 
+img.my-slides {
+    height: 100%;
+    width: 100%;
+    animation: fadeEffect 1s;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
