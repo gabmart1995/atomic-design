@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const getImages = async () => {
         
         try {
-            const response = await fetch('https://picsum.photos/v2/list?page=2&limit=5');
+            const response = await fetch('https://picsum.photos/v2/list?page=2&limit=3');
             const photos = await response.json();
 
             images.innerHTML += photos.map( photo => {
