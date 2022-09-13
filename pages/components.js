@@ -57,4 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }         
         })
         .catch( error => console.error( error ) );
+
+
+    // sidenav event
+    const sidenav = document.querySelector('sidenav-component');
+    const buttonSide = document.querySelector('#sidenav-trigger');
+
+    buttonSide.addEventListener('click', () => {
+        sidenav._open = true;
+    })
 });

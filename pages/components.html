@@ -13,6 +13,7 @@
     <script src="/components/hero/hero.js" defer></script>
     <script src="/components/pagination/pagination.js" defer></script>
     <script src="/components/modals/modal.js" defer></script>
+    <script src="/components/sidenav/sidenav-component.js" defer></script>
     <script src="/components/footer/footer.js" defer></script>
     <navbar-component></navbar-component>
     <hero-component 
@@ -67,6 +68,12 @@
             <button id="close-modal" class="modal-button">Cerrar modal</button>
         </div>
     </modal-component>
+    <section class="text-center">
+        <h2>Overlay (Sidenav) block</h2>
+        <p>Menu lateral de contenido</p>
+        <button class="modal-button" id="sidenav-trigger">Abrir menu lateral</button>
+        <sidenav-component></sidenav-component>
+    </section>
 
     <footer-component></footer-component>
     <script src="/pages/components.js"></script>
