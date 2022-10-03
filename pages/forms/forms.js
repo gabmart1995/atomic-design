@@ -5,6 +5,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorsName = form.querySelector('#errors-name');
     const errorsMessage = form.querySelector('#errors-message');
 
+    const renderSwitch = () => {
+        
+        const switchElement = document.querySelector('#switch');
+        
+        const foods = [
+            'Pizza', 
+            'Pasta', 
+            'Helado', 
+            'Galletas', 
+            'Ensaladas', 
+            'Jugos', 
+            'Tequeños', 
+            'Quesos', 
+            'Tortas'
+        ];
+
+        switchElement.innerHTML = foods.map( food => {
+            return (`
+                <div class="column">
+                    <switch-component name="${food.toLowerCase()}"></switch-component>
+                </div>
+            `);
+        }).join('');
+
+        const switchElements = document.querySelectorAll('switch-component');        
+        switchElements.forEach( element => {
+            element.addEventListener('change-switch', ( $event ) => {
+                console.log( $event.detail );
+            });
+        });
+    };
+
+
     // forms ..
     const resetForm = () => {        
         errorsName.classList.replace('d-block', 'd-none');
@@ -79,4 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // validate and send data to backend ...
     });
+
+    renderSwitch();
 });

@@ -307,3 +307,22 @@ form label {
     flex-direction: column;
     justify-content: center;
 }
+
+
+/* loaders */
+.flex-loaders {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+    .flex-loaders  {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    loader-component {
+        margin: 10px 0;
+    }
+}

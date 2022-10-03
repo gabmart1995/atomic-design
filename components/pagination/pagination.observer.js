@@ -106,7 +106,7 @@ class Pagination extends HTMLElement {
         
         this[name] = newValue;
 
-        let ready = this.hasAttribute('total') && this.hasAttributes('pagination');
+        let ready = this.hasAttribute('total') && this.hasAttribute('pagination');
 
         if ( ready ) {
             this.render();

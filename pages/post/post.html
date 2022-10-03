@@ -14,8 +14,7 @@
     <script src="/components/footer/footer.js" defer></script>
     <script src="/components/toast/toast.js" defer></script>
     <script src="/components/progress/progress.js" defer></script>
-    <script src="/components/switch/switch.js" defer></script>
-    <script src="/components/radio/radio.js" defer></script>
+    <script src="/components/loader/loader-component.js" defer></script>
 
     <navbar-component></navbar-component>
     <hero-component 
@@ -32,37 +31,19 @@
         <progress-component value="80" color="#dc3545"></progress-component>
         <progress-component class="animated" color="#198754"></progress-component>
     </section>
+    
     <section class="text-center">
-        <h2>Switch Block</h2>
-        <p>Se utilizan en formularios para verificar si elemento esta seleccionado en el formulario</p>
-        <div class="grid-switch" id="switch"></div>
-    </section>
-    <section class="text-center">
-        <h2>Radio block</h2>
-        <p>Se utilizan en formularios para verificar si por lo menos elemento esta seleccionado en el formulario</p>
-        <div class="grid-radio">
-            <radio-component 
-                name="number" 
-                checked="false"
-                label="one"    
-            ></radio-component>
-            <radio-component 
-                name="number" 
-                checked="false"
-                label="two"    
-            ></radio-component>
-            <radio-component 
-                name="number" 
-                checked="false"
-                label="three"    
-            ></radio-component>
-            <radio-component 
-                name="number" 
-                checked="true"
-                label="four"    
-            ></radio-component>
+        <h2>Loader block</h2>
+        <p>Animaciones de carga de contenido</p>
+        
+        <div class="flex-loaders">
+            <loader-component></loader-component>
+            <loader-component color-spin="#0dcaf0" velocity="2s"></loader-component>
+            <loader-component color-spin="#dc3545" velocity="1s"></loader-component>
+            <loader-component color-spin="#198754" velocity="3s"></loader-component>
         </div>
     </section>
+
     <section class="text-center">
         <h2>Toast block</h2>
         <p>

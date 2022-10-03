@@ -34,6 +34,7 @@ class Pagination extends HTMLElement {
             .then( response => response.text() )
             .then( text =>  {
                 this.shadowDom.innerHTML = text;
+                this.render();
             })
             .catch( error => console.error( error ) );
     }
@@ -48,10 +49,13 @@ class Pagination extends HTMLElement {
         
         this[name] = newValue;
 
-        let ready = this.hasAttribute('total') && this.hasAttributes('pagination');
+        
+        let ready = this.hasAttribute('pagination') && this.hasAttribute('total');
 
         if ( ready ) {
-            this.render();
+            // calculamos el limite cuando y actualizamos cuando tengamos los atributos
+            this.limit = Math.ceil( this._total / this._pagination );
+            this.updatePage();
         }
     }
     
@@ -97,21 +101,18 @@ class Pagination extends HTMLElement {
     }
 
     updatePage() {
-        const start = this.shadowDom.querySelector('#start');
+        const start = this.shadowDom.querySelector('span#start');
         start.innerText = this.page;
-    }
 
-    render() {
-        
-        this.limit = Math.ceil( this._total / this._pagination );
-        
         // render total span
         const totalSpan = this.shadowDom.querySelector('span#count');
         totalSpan.innerText = this._total;
 
         const spanEnd = this.shadowDom.querySelector('span#end');
         spanEnd.innerText = this.limit;
-        
+    }
+
+    render() {        
         const prevButton = this.shadowDom.querySelector('.prev');
         prevButton.addEventListener('click', this.handlePrevious.bind( this ) );
         
