@@ -19,7 +19,7 @@ class SidenavComponent extends HTMLElement {
 	}
 
 	connectedCallback() {
-		fetch('/components/sidenav/sidenav-component.html')
+		fetch('components/sidenav/sidenav-component.html')
 			.then( response => response.text() )
 			.then( text => {
 				this.shadowDom.innerHTML = text;

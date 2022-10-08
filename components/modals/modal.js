@@ -12,7 +12,7 @@ class Modal extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('/components/modals/modal.html')
+        fetch('components/modals/modal.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text; 
