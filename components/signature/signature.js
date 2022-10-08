@@ -42,7 +42,7 @@ class SignatureComponent extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('/components/signature/signature.html')
+        fetch('components/signature/signature.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadomDom.innerHTML = text;
