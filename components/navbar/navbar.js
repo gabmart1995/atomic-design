@@ -7,7 +7,7 @@ class Navbar extends HTMLElement {
 
     connectedCallback() {
 
-        fetch('/components/navbar/navbar.html')
+        fetch('components/navbar/navbar.html')
             .then( response => response.text() )
             .then( text => { 
                 this.shadowDom.innerHTML = text; 
