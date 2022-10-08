@@ -14,7 +14,7 @@ class Switch extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('/components/switch/switch.html')
+        fetch('components/switch/switch.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text;

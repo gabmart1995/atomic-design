@@ -33,7 +33,7 @@ class Radio extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('/components/radio/radio.html')
+        fetch('components/radio/radio.html')
             .then( response => response.text() )
             .then( text => {
                 this.innerHTML = text;

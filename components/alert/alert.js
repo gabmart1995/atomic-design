@@ -55,7 +55,7 @@ class Alert extends HTMLElement {
 
     connectedCallback() {
            
-        fetch('/components/alert/alert.html')
+        fetch('components/alert/alert.html')
             .then( response => response.text() )
             .then( text =>  {
                 this.shadowDom.innerHTML = text;
