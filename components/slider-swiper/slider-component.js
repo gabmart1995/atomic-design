@@ -18,7 +18,7 @@ class SliderSwiperComponent extends HTMLElement {
 	}
 
 	connectedCallback() {
-		fetch('/components/slider-swiper/slider-component.html')
+		fetch('components/slider-swiper/slider-component.html')
 			.then( response => response.text() )
 			.then( text => {
 				this.innerHTML = text;
