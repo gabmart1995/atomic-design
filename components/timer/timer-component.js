@@ -29,7 +29,7 @@ class TimerComponent extends HTMLElement {
 	}
 
 	connectedCallback() {
-		fetch('/components/timer/timer-component.html')
+		fetch('components/timer/timer-component.html')
 			.then( response =>  response.text() )
 			.then( text => {
 				this.shadowDom.innerHTML = text;
