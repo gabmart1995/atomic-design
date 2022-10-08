@@ -19,7 +19,7 @@ class Hero extends HTMLElement {
 
     connectedCallback() {
         
-        fetch('/components/hero/hero.html')
+        fetch('components/hero/hero.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text; 
