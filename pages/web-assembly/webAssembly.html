@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/atomic-design/" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carga de componentes WebAssembly</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/a8e23f8d34.js" crossorigin="anonymous"></script>
-    <base href="/atomic-design/" />
 </head>
 <body>
-    <script src="/components/hero/hero.js" defer></script>
-    <script src="/components/footer/footer.js" defer></script>
-    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="components/hero/hero.js" defer></script>
+    <script src="components/footer/footer.js" defer></script>
+    <script src="components/navbar/navbar.js" defer></script>
 
     <navbar-component></navbar-component>
     <hero-component 
         title="Atomic Design"
-        message="El desarrollo en pequenos bloques de codigo reutilizables"
-        image="/img/image_2.jpg"
+        message="El desarrollo en pequeños bloques de codigo reutilizables"
+        image="img/image_2.jpg"
     ></hero-component>
     <section class="text-center">
         <h2>Web Assembly</h2>
@@ -122,7 +122,7 @@
     </section>
     <footer-component></footer-component>
     <!-- cargamos el archivo de conexion -->
-    <script src="/js/wasm_exec.js"></script>
-    <script src="/pages/web-assembly/webAssembly.js"></script>
+    <script src="js/wasm_exec.js"></script>
+    <script src="pages/web-assembly/webAssembly.js"></script>
 </body>
 </html>

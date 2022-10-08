@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     };
 
-    loadWasm('/wasm/greetings-module/greetings.wasm', ( wasm ) => {
+    loadWasm('wasm/greetings-module/greetings.wasm', ( wasm ) => {
         if ( wasm ) {
             const { go, module } = wasm;
             let { instance } = wasm;
@@ -52,14 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    loadWasm('/wasm/calculator-module/calculator.wasm', ( wasm ) => {
+    loadWasm('wasm/calculator-module/calculator.wasm', ( wasm ) => {
         if ( wasm ) {
             const { go, instance } = wasm;
             go.run( instance );
         }
     });
 
-    loadWasm('/wasm/hash-module/hash.wasm', ( wasm ) => {
+    loadWasm('wasm/hash-module/hash.wasm', ( wasm ) => {
         if ( wasm ) {
             const { go, instance } = wasm;
             go.run( instance );
