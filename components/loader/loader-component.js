@@ -33,7 +33,7 @@ class LoaderComponent extends HTMLElement {
 			.then( text => {
 				this.shadowDom.innerHTML = text;
 				this.render();
-			})
+			});
 	}
 
 	attributeChangedCallback( name, oldValue, newValue ) {
