@@ -19,7 +19,7 @@ class Collapse extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('/components/collapse/collapse.html')
+        fetch('components/collapse/collapse.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text;

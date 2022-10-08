@@ -29,7 +29,7 @@ class SliderComponent extends HTMLElement {
 	}
 
 	connectedCallback() {
-		fetch('/components/slider/slider-component.html')
+		fetch('components/slider/slider-component.html')
 			.then( response => response.text() )
 			.then( text => {
 				this.shadowDom.innerHTML = text;
