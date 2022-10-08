@@ -27,7 +27,7 @@ class Toast extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('/components/toast/toast.html')
+        fetch('components/toast/toast.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text;

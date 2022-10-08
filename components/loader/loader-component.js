@@ -28,7 +28,7 @@ class LoaderComponent extends HTMLElement {
 	}
 
 	connectedCallback() {
-		fetch('/components/loader/loader-component.html')
+		fetch('components/loader/loader-component.html')
 			.then( response => response.text() )
 			.then( text => {
 				this.shadowDom.innerHTML = text;

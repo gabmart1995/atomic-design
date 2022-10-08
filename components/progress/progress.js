@@ -61,7 +61,7 @@ class Progress extends HTMLElement {
     }
 
     connectedCallback() {
-        fetch('/components/progress/progress.html')
+        fetch('components/progress/progress.html')
             .then( response => response.text() )
             .then( text => {
                 this.shadowDom.innerHTML = text;
