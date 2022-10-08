@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderSlider = () => {
         const images = [
-            '/img/image_1.jpg',
-            '/img/woman_1.jpg',
-            '/img/meeting_1.jpg'
+            'img/image_1.jpg',
+            'img/woman_1.jpg',
+            'img/meeting_1.jpg'
         ];
 
         const sliderComponent = document.querySelector('slider-component');
