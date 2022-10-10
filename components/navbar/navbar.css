@@ -49,7 +49,7 @@ nav ul {
         flex-direction: column;
         transition: max-height 0.2s ease-out;
         max-height: 0;
-        overflow: hidden; /* oculta el contenido desbordado */
+        /*overflow: hidden; /* oculta el contenido desbordado */
     }
 
     .responsive-only {
