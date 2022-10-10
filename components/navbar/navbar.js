@@ -20,7 +20,7 @@ class Navbar extends HTMLElement {
         const element = this.shadowDom.querySelector('ul');
 
         if ( element ) {
-            element.style.overflow = element.style.maxHeight ? 'hidden' : '';
+            // element.style.overflow = element.style.maxHeight ? 'hidden' : '';
             element.style.maxHeight = element.style.maxHeight ? null : ( element.scrollHeight + 'px' );
         }
     }
