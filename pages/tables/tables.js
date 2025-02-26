@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // data of posts
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('data/posts.json')
         .then( response => response.json() )
         .then( data => {
              

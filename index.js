@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gridCard = document.querySelector('.grid-cards');
 
-    fetch('./data.json')
+    fetch('data/data.json')
         .then( response => response.json() )
         .then(({ cards }) => {
             
